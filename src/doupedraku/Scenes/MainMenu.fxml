@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doupedraku.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doupedraku.FXMLDocumentController">
    <children>
-      <Circle fx:id="button" fill="DODGERBLUE" layoutX="300.0" layoutY="200.0" onMouseClicked="#handleButtonAction" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="label" layoutX="300.0" layoutY="320.0" />
+      <Label fx:id="label" layoutX="154.0" layoutY="320.0" prefHeight="17.0" prefWidth="146.0" />
+      <Circle fill="#2d3032" layoutX="300.0" layoutY="200.0" onMouseClicked="#handleButtonAction" radius="50.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="150.0" />
    </children>
 </AnchorPane>

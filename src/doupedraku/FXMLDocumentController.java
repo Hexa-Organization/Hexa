@@ -1,5 +1,6 @@
 package doupedraku;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -14,10 +15,10 @@ public class FXMLDocumentController implements Initializable
     private Label label;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) 
+    private void handleButtonAction() throws IOException
     {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+        System.out.println("Dante!");
+        label.setText("Smrdis!");
     }
     
     @Override
