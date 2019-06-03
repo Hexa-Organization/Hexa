@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doupedraku.TestController">
+   <children>
+      <Label fx:id="label" layoutX="232.0" layoutY="183.0" prefHeight="17.0" prefWidth="60.0" />
+      <Button layoutX="42.0" layoutY="41.0" mnemonicParsing="false" onAction="#CreatePlayer" text="Button" />
+   </children>
+</AnchorPane>
