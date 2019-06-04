@@ -8,14 +8,19 @@ public abstract class LivingThings
     public int healthPoints;
     public int maxMagicPoints;
     public int magicPoints;
-    public int strengthPoints;
-    public int defensePoints;
+    public int attack;
+    public int armor;
     public Weapon weapon;
-    
     
     public void CheckForDeath()
     {
         if (this.healthPoints <= 0)
             System.out.println(this.name + " has died");
     }  
+    
+    public void Attack(LivingThings enemy)
+    {
+        enemy.healthPoints -= this.attack - enemy.armor;
+    }
+    
 }
