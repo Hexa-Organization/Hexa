@@ -1,13 +1,16 @@
-package doupedraku;
+package doupedraku.Scenes.Controllers;
 
+import doupedraku.Player;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 public class PlayerCreatorController implements Initializable 
-
 {   
     @FXML
     TextField nameField;
@@ -56,10 +59,10 @@ public class PlayerCreatorController implements Initializable
         }
         
         System.out.println(player.name + player.inteligence + player.strength + player.stamina + player.vitality + player.isMale);
-
+        
         return player;
     }
-          
+    
     private int GetNumber(TextField field)
     {
         String sValue = field.getText();
@@ -72,6 +75,5 @@ public class PlayerCreatorController implements Initializable
     public void initialize(URL url, ResourceBundle rb) 
     {
 
-    }    
-    
+    }     
 }
