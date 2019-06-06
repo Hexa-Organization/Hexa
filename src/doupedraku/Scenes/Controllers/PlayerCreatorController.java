@@ -10,11 +10,13 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+
 
 public class PlayerCreatorController implements Initializable 
 {   
+    @FXML
+    private AnchorPane rootPane;
     @FXML
     TextField nameField;
     @FXML
@@ -35,6 +37,12 @@ public class PlayerCreatorController implements Initializable
     @FXML
     public void CreatePlayer() throws IOException
     {
+
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("C:\\Users\\flame\\Documents\\NetBeansProjects\\Hexa\\src\\doupedraku\\Scenes\\PlayerInfo.fxml"));
+
+        rootPane.getChildren().setAll(pane);
+        
+        
         player.name = nameField.getText();
         player.inteligence = GetNumber(inteligencePointsField);
         player.strength = GetNumber(strengthPointsField);
@@ -69,7 +77,7 @@ public class PlayerCreatorController implements Initializable
         
         System.out.println(player.name + player.inteligence + player.strength + player.stamina + player.vitality + player.isMale + count);
 
-        try (PrintWriter out = new PrintWriter("filename.txt")) 
+        try (PrintWriter out = new PrintWriter("Character .txt")) 
         {
             out.println(player.level);
             out.println(player.name);
@@ -91,6 +99,8 @@ public class PlayerCreatorController implements Initializable
         {
             
         }
+        
+        
     }
     
     private int GetNumber(TextField field)
