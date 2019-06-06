@@ -2,8 +2,8 @@ package doupedraku;
 
 public class Player extends LivingThings
 {
-    public static int characterPoints = 40;
     public int level = 1;
+    public int characterPoints = 30 + level*10;
     public int maxExpirience = 36+level*6;
     public int expirience = 0;
     public boolean isMale;

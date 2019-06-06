@@ -9,10 +9,34 @@ import javafx.scene.text.Text;
 
 public class PlayerInfoController implements Initializable 
 {
-    
-    public void neco()
+    @FXML
+    Text levelName;
+    @FXML
+    Text hitPoints;
+    @FXML
+    Text magicPoints;
+    @FXML
+    Text strength;
+    @FXML
+    Text inteligence;
+    @FXML
+    Text stamina;
+    @FXML
+    Text vitality;
+    @FXML
+    Text armor;
+    @FXML
+    Text attack;
+    @FXML
+    Text weapon;
+    @FXML
+    Text expirience;
+    @FXML
+    Text characterPoints;
+         
+    public void loadCharacter()
     {
-
+        
     }
     
 
