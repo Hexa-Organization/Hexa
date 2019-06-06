@@ -21,5 +21,6 @@
       <Text fx:id="weapon" layoutX="14.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="expirience" layoutX="289.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="characterPoints" layoutX="289.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Button layoutX="311.0" layoutY="241.0" mnemonicParsing="false" onAction="#loadCharacter" text="Button" />
    </children>
 </AnchorPane>

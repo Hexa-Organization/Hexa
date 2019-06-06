@@ -41,6 +41,12 @@ public class PlayerCreatorController implements Initializable
         player.stamina = GetNumber(staminaPointsField);
         player.vitality = GetNumber(vitalityPointsField);
         player.isMale = true;
+        player.maxHealthPoints = player.GetHealth(player.stamina);
+        player.expirience = 0;
+        player.maxMagicPoints = player.GetHealth(player.inteligence);
+        player.attack = player.GetAttack(player.strength);
+        player.armor = player.GetAttack(player.vitality);
+               
         int count = player.inteligence + player.strength + player.stamina + player.vitality;
         
         if (count > player.characterPoints)
@@ -65,12 +71,21 @@ public class PlayerCreatorController implements Initializable
 
         try (PrintWriter out = new PrintWriter("filename.txt")) 
         {
+            out.println(player.level);
             out.println(player.name);
             out.println(player.strength);
             out.println(player.stamina);
             out.println(player.inteligence);
             out.println(player.vitality);
-            out.println(player.isMale);         
+            out.println(player.isMale);
+            out.println(player.maxHealthPoints);
+            out.println(player.maxMagicPoints);
+            out.println(player.maxExpirience);
+            out.println(player.expirience);
+            out.println(player.attack);
+            out.println(player.armor);
+            out.println(player.characterPoints);
+            
         }
         catch(Exception e)
         {
