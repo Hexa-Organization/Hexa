@@ -1,5 +1,6 @@
-package doupedraku.Scenes.Controllers;
+package doupedraku;
 
+import doupedraku.Player;
 import doupedraku.Player;
 import java.io.BufferedReader;
 import java.io.File;

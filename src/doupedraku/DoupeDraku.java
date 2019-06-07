@@ -1,6 +1,5 @@
 package doupedraku;
 
-import doupedraku.Scenes.Controllers.PlayerCreatorController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +12,7 @@ public class DoupeDraku extends Application
     @Override
     public void start(Stage stage) throws Exception 
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Scenes/PlayerCreator.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("PlayerCreator.fxml"));
         
         Scene scene = new Scene(root);
         

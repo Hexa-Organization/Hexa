@@ -1,5 +1,6 @@
-package doupedraku.Scenes.Controllers;
+package doupedraku;
 
+import doupedraku.Player;
 import doupedraku.Player;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -9,14 +10,19 @@ import javafx.scene.control.*;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 
 public class PlayerCreatorController implements Initializable 
 {   
     @FXML
-    private AnchorPane rootPane;
+    AnchorPane rootPane;
     @FXML
     TextField nameField;
     @FXML
@@ -33,16 +39,11 @@ public class PlayerCreatorController implements Initializable
     Label warning;
     
     Player player = new Player();        
-    
+
     @FXML
     public void CreatePlayer() throws IOException
-    {
-
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("C:\\Users\\flame\\Documents\\NetBeansProjects\\Hexa\\src\\doupedraku\\Scenes\\PlayerInfo.fxml"));
-
-        rootPane.getChildren().setAll(pane);
-        
-        
+    {       
+   
         player.name = nameField.getText();
         player.inteligence = GetNumber(inteligencePointsField);
         player.strength = GetNumber(strengthPointsField);
@@ -77,7 +78,7 @@ public class PlayerCreatorController implements Initializable
         
         System.out.println(player.name + player.inteligence + player.strength + player.stamina + player.vitality + player.isMale + count);
 
-        try (PrintWriter out = new PrintWriter("Character .txt")) 
+        try (PrintWriter out = new PrintWriter("Character.txt")) 
         {
             out.println(player.level);
             out.println(player.name);
@@ -99,8 +100,15 @@ public class PlayerCreatorController implements Initializable
         {
             
         }
-        
-        
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("PlayerInfo.fxml"));
+        rootPane.getChildren().setAll(pane);
+
+//        Parent root = FXMLLoader.load(getClass().getResource("PlayerInfo.fxml"));
+//        
+//        Scene scene = new Scene(root);
+//        Stage stage = new Stage();
+//        stage.setScene(scene);
+//        stage.show();       
     }
     
     private int GetNumber(TextField field)
