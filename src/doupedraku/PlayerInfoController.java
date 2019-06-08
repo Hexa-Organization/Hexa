@@ -1,12 +1,7 @@
 package doupedraku;
 
-import doupedraku.Player;
-import doupedraku.Player;
-import doupedraku.Player;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -48,7 +43,7 @@ public class PlayerInfoController implements Initializable
     
     public void LoadCharacter() throws IOException
     {
-        String list[] = new String[7];
+        String list[] = new String[9];
         Path path = Paths.get("Character.txt");
         Scanner scanner = new Scanner(path);
         System.out.println("Read text file using Scanner");
@@ -60,40 +55,66 @@ public class PlayerInfoController implements Initializable
             System.out.println(list[n]);
             n++;
         }
+        scanner.close();
+        
         player.level = GetNumber(list[0]);
         player.stamina = GetNumber(list[3]);
         player.strength = GetNumber(list[2]);
         player.inteligence = GetNumber(list[4]);
         player.vitality = GetNumber(list[5]);
         player.name = list[1];
+        player.expirience = GetNumber(list[6]);
         player.maxHealthPoints = player.GetHealth(player.stamina);
         player.healthPoints = player.maxHealthPoints;
         player.maxMagicPoints = player.GetHealth(player.inteligence);
         player.magicPoints = player.maxMagicPoints;
-        player.expirience = 0;
+        player.maxExpirience = player.GetExpirience();
         player.attack = player.GetAttack(player.strength);
         player.armor = player.GetAttack(player.vitality);
-        
+        player.characterPoints = player.GetCharacterPoints();
         
         levelName.setText(player.name + " lvl. " + GetString(player.level));
         strength.setText(GetString(player.strength));
         stamina.setText(GetString(player.stamina));
         inteligence.setText(GetString(player.inteligence));
         vitality.setText(GetString(player.vitality));
+        hitPoints.setText("Health: " + GetString(player.healthPoints) + " / " + GetString(player.maxHealthPoints));
+        magicPoints.setText("Magic: " + GetString(player.magicPoints) + " / " + GetString(player.maxMagicPoints));
+        expirience.setText("Expirience: " + GetString(player.expirience) + " / " + GetString(player.maxExpirience));
+        attack.setText("attack: " + GetString(player.attack));
+        armor.setText("armor: " + GetString(player.armor));
+        characterPoints.setText("Character Points: " + GetString(player.characterPoints));      
+    }
+    
+    public void Update() throws IOException
+    { 
+        player.strength = GetNumber(strength.getText());
+        player.stamina = GetNumber(stamina.getText());
+        player.inteligence = GetNumber(inteligence.getText());
+        player.vitality = GetNumber(vitality.getText());
+        int count = player.inteligence + player.strength + player.stamina + player.vitality;
+        if (count != player.characterPoints)
+        {
+            System.out.println("I not dont NOOONONONnOnON NON ONwork!");
+        }
+        else
+        {
+            try (PrintWriter out = new PrintWriter("Character.txt")) 
+            {
+                out.println(player.level);
+                out.println(player.name);
+                out.println(player.strength);
+                out.println(player.stamina);
+                out.println(player.inteligence);
+                out.println(player.vitality);    
+                out.println(player.expirience);
+            }
+            catch(Exception e)
+            {
 
-        
-//        levelName.setText(list[1] + " lvl." + list[0]);
-//        strength.setText(list[2]);
-//        stamina.setText(list[3]);
-//        inteligence.setText(list[4]);
-//        vitality.setText(list[5]);
-//        hitPoints.setText("Hit Points: " + list[7] + " / " + list[7]);
-//        magicPoints.setText("Magic Points: " + list[8] + " / " + list[8]);
-//        expirience.setText("Expirience Points: " + list[10] + " / " + list[9]);
-//        attack.setText("attack: " + list[11]);
-//        armor.setText("armor: " + list[12]);
-//        characterPoints.setText("Character Points: " + list[13]);        
-//        scanner.close();
+            }  
+            LoadCharacter();   
+        }   
     }
     
     private String GetString(int value)
@@ -109,16 +130,7 @@ public class PlayerInfoController implements Initializable
         int number = Integer.parseInt(sValue);
         return number;
     }
-    
-    public void Update()
-    {
-        strength.getText();
-        stamina.getText();
-        inteligence.getText();
-        vitality.getText();
-    }
-    
-    
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
