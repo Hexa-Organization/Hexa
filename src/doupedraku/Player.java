@@ -20,6 +20,8 @@ public class Player extends LivingThings
     public int GetAttack(int value)
     {
         value = value/2 - 2;
+        if (value <= 0)
+            value = 1;
         return value;
     }
 }

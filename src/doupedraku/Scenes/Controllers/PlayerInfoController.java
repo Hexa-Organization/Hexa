@@ -1,5 +1,6 @@
-package doupedraku;
+package doupedraku.Scenes.Controllers;
 
+import doupedraku.Player;
 import doupedraku.Player;
 import doupedraku.Player;
 import java.io.BufferedReader;
@@ -59,19 +60,38 @@ public class PlayerInfoController implements Initializable
             list[n] = line;
             System.out.println(list[n]);
             n++;
-        }           
-        levelName.setText(list[1] + " lvl." + list[0]);
-        strength.setText(list[2]);
-        stamina.setText(list[3]);
-        inteligence.setText(list[4]);
-        vitality.setText(list[5]);
-        hitPoints.setText("Hit Points: " + list[7] + " / " + list[7]);
-        magicPoints.setText("Magic Points: " + list[8] + " / " + list[8]);
-        expirience.setText("Expirience Points: " + list[10] + " / " + list[9]);
-        attack.setText("attack: " + list[11]);
-        armor.setText("armor: " + list[12]);
-        characterPoints.setText("Character Points: " + list[13]);        
-        scanner.close();
+        }         
+        player.stamina = GetNumber(list[3]);
+        player.strength = GetNumber(list[2]);
+        player.inteligence = GetNumber(list[4]);
+        player.vitality = GetNumber(list[5]);
+        player.name = list[1];
+        player.healthPoints = player.GetHealth(player.stamina);
+        
+        String HP = String.valueOf(player.healthPoints);
+        
+        hitPoints.setText(HP);
+        
+//        levelName.setText(list[1] + " lvl." + list[0]);
+//        strength.setText(list[2]);
+//        stamina.setText(list[3]);
+//        inteligence.setText(list[4]);
+//        vitality.setText(list[5]);
+//        hitPoints.setText("Hit Points: " + list[7] + " / " + list[7]);
+//        magicPoints.setText("Magic Points: " + list[8] + " / " + list[8]);
+//        expirience.setText("Expirience Points: " + list[10] + " / " + list[9]);
+//        attack.setText("attack: " + list[11]);
+//        armor.setText("armor: " + list[12]);
+//        characterPoints.setText("Character Points: " + list[13]);        
+//        scanner.close();
+    }
+    
+    private int GetNumber(String string)
+    {
+        String sValue = string;
+        sValue = sValue.replaceAll("\\D+", "");
+        int number = Integer.parseInt(sValue);
+        return number;
     }
     
     public void Update()

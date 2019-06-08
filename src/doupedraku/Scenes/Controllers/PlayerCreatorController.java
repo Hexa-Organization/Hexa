@@ -1,6 +1,5 @@
-package doupedraku;
+package doupedraku.Scenes.Controllers;
 
-import doupedraku.Player;
 import doupedraku.Player;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -86,21 +85,22 @@ public class PlayerCreatorController implements Initializable
             out.println(player.stamina);
             out.println(player.inteligence);
             out.println(player.vitality);
-            out.println(player.isMale);
-            out.println(player.maxHealthPoints);
-            out.println(player.maxMagicPoints);
-            out.println(player.maxExpirience);
-            out.println(player.expirience);
-            out.println(player.attack);
-            out.println(player.armor);
-            out.println(player.characterPoints);
+//            out.println(player.isMale);
+//            out.println(player.maxHealthPoints);
+//            out.println(player.maxMagicPoints);
+//            out.println(player.maxExpirience);
+//            out.println(player.expirience);
+//            out.println(player.attack);
+//            out.println(player.armor);
+//            out.println(player.characterPoints);
+
             
         }
         catch(Exception e)
         {
             
         }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("PlayerInfo.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/Scenes/PlayerInfo.fxml"));
         rootPane.getChildren().setAll(pane);
 
 //        Parent root = FXMLLoader.load(getClass().getResource("PlayerInfo.fxml"));
