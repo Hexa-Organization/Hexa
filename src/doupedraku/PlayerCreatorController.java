@@ -1,4 +1,4 @@
-package doupedraku.Scenes.Controllers;
+package doupedraku;
 
 import doupedraku.Player;
 import java.net.URL;
@@ -100,7 +100,7 @@ public class PlayerCreatorController implements Initializable
         {
             
         }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/Scenes/PlayerInfo.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("PlayerInfo.fxml"));
         rootPane.getChildren().setAll(pane);
 
 //        Parent root = FXMLLoader.load(getClass().getResource("PlayerInfo.fxml"));

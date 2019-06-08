@@ -1,4 +1,4 @@
-package doupedraku.Scenes.Controllers;
+package doupedraku;
 
 import doupedraku.Player;
 import doupedraku.Player;
@@ -48,7 +48,7 @@ public class PlayerInfoController implements Initializable
     
     public void LoadCharacter() throws IOException
     {
-        String list[] = new String[14];
+        String list[] = new String[7];
         Path path = Paths.get("Character.txt");
         Scanner scanner = new Scanner(path);
         System.out.println("Read text file using Scanner");
@@ -56,21 +56,31 @@ public class PlayerInfoController implements Initializable
         while(scanner.hasNextLine())
         {
             String line = scanner.nextLine();    
-            System.out.println(line);
             list[n] = line;
             System.out.println(list[n]);
             n++;
-        }         
+        }
+        player.level = GetNumber(list[0]);
         player.stamina = GetNumber(list[3]);
         player.strength = GetNumber(list[2]);
         player.inteligence = GetNumber(list[4]);
         player.vitality = GetNumber(list[5]);
         player.name = list[1];
-        player.healthPoints = player.GetHealth(player.stamina);
+        player.maxHealthPoints = player.GetHealth(player.stamina);
+        player.healthPoints = player.maxHealthPoints;
+        player.maxMagicPoints = player.GetHealth(player.inteligence);
+        player.magicPoints = player.maxMagicPoints;
+        player.expirience = 0;
+        player.attack = player.GetAttack(player.strength);
+        player.armor = player.GetAttack(player.vitality);
         
-        String HP = String.valueOf(player.healthPoints);
         
-        hitPoints.setText(HP);
+        levelName.setText(player.name + " lvl. " + GetString(player.level));
+        strength.setText(GetString(player.strength));
+        stamina.setText(GetString(player.stamina));
+        inteligence.setText(GetString(player.inteligence));
+        vitality.setText(GetString(player.vitality));
+
         
 //        levelName.setText(list[1] + " lvl." + list[0]);
 //        strength.setText(list[2]);
@@ -84,6 +94,12 @@ public class PlayerInfoController implements Initializable
 //        armor.setText("armor: " + list[12]);
 //        characterPoints.setText("Character Points: " + list[13]);        
 //        scanner.close();
+    }
+    
+    private String GetString(int value)
+    {
+        String s = String.valueOf(value);
+        return s;
     }
     
     private int GetNumber(String string)
