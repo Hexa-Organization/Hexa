@@ -132,7 +132,7 @@ public class PlayerInfoController implements Initializable
             Parent root = (Parent) loader.load();
 
             BattleController secController=loader.getController();
-            secController.SetName(player.name);
+            secController.SetName(player.name + player.attack, player);
             Stage stage=new Stage();
             stage.setScene(new Scene(root));
             stage.show();

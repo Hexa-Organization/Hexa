@@ -12,10 +12,14 @@ public abstract class LivingThings
     public int armor;
     public Weapon weapon;
     
-    public void CheckForDeath()
+    public boolean CheckForDeath()
     {
         if (this.healthPoints <= 0)
+        {
             System.out.println(this.name + " has died");
+            return true;
+        }
+        return false;
     }  
     
     public void Attack(LivingThings enemy)
