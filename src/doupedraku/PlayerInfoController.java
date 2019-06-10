@@ -7,10 +7,17 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class PlayerInfoController implements Initializable 
 {
@@ -41,7 +48,7 @@ public class PlayerInfoController implements Initializable
     
     Player player = new Player();
     
-    public void LoadCharacter() throws IOException
+    private void LoadCharacter() throws IOException
     {
         String list[] = new String[9];
         Path path = Paths.get("Character.txt");
@@ -114,7 +121,26 @@ public class PlayerInfoController implements Initializable
 
             }  
             LoadCharacter();   
-        }   
+        }    
+    }
+    
+    private void LoadPlayer()
+    {
+       try 
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Battle.fxml"));
+            Parent root = (Parent) loader.load();
+
+            BattleController secController=loader.getController();
+            secController.SetName(player.name);
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } 
+        catch (IOException e) 
+        {
+            e.printStackTrace();
+        } 
     }
     
     private String GetString(int value)
@@ -134,7 +160,15 @@ public class PlayerInfoController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-
+        try 
+        {
+            LoadCharacter();
+            LoadPlayer();
+        } 
+        catch (IOException ex) 
+        {
+            Logger.getLogger(PlayerInfoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
     
 }

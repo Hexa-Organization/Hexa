@@ -20,7 +20,10 @@ public abstract class LivingThings
     
     public void Attack(LivingThings enemy)
     {
-        enemy.healthPoints -= this.attack - enemy.armor;
+        int damage = this.attack - enemy.armor;
+        if (damage <= 0)
+            damage = 1;
+        enemy.healthPoints -= damage;
     }
     
 }
