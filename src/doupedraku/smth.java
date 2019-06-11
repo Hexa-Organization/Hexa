@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package doupedraku;
 
 import java.net.URL;
@@ -23,7 +18,7 @@ import javafx.scene.shape.Circle;
  *
  * @author bohou
  */
-public class Play implements Initializable {
+public class smth implements Initializable {
     
     @FXML
     private Label label;
@@ -48,9 +43,7 @@ public class Play implements Initializable {
     @FXML
     private void handleButtonAction(KeyEvent event) 
     {
-        
-        Generate();
-        
+        System.out.println("Dopředu");
         if (x == 4 && y ==1 || x == 2 && y ==3)
         {
      //       System.out.println("strom");
@@ -91,7 +84,7 @@ public class Play implements Initializable {
         else if(event.getCode() == KeyCode.W)
         {
             System.out.println("DoLeva");
-            grid.setConstraints(chr, x, --y);
+            GridPane.setConstraints(chr, x, --y);
             if (x == 4 && y ==1 || x == 2 && y ==3)
             {
                 System.out.println("strom");
