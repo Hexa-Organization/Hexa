@@ -12,7 +12,7 @@ public class DoupeDraku extends Application
     @Override
     public void start(Stage stage) throws Exception 
     {
-        Parent root = FXMLLoader.load(getClass().getResource("smth.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Map.fxml"));
         
         Scene scene = new Scene(root);
         
