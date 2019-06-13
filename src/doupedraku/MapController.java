@@ -82,9 +82,13 @@ public class MapController implements Initializable
     @FXML
     public void Movement(KeyEvent event)
     {
+        
+        
         switch (event.getCode())
         {
             case D:
+                if(x == 9)
+                    break;
                 System.out.println("Doprava");
                 grid.setConstraints(chr, ++x, y);
 
@@ -93,9 +97,12 @@ public class MapController implements Initializable
                     System.out.println("NO");
                     grid.setConstraints(chr, --x, y);
                 }
+                
                 break;
 
             case A:
+                if(x == 0)
+                    break;
                 System.out.println("Doleva");
                 grid.setConstraints(chr, --x, y); 
 
@@ -107,6 +114,8 @@ public class MapController implements Initializable
                 break;
 
             case S:
+                if(y == 9)
+                    break;
                 System.out.println("Dolu");
                 grid.setConstraints(chr, x, ++y);
 
@@ -118,6 +127,8 @@ public class MapController implements Initializable
                 break;
 
             case W:
+                if(y == 0)
+                    break;
                 System.out.println("Nahoru");
                 grid.setConstraints(chr, x, --y);
 
@@ -127,7 +138,7 @@ public class MapController implements Initializable
                     grid.setConstraints(chr, x, ++y);
                 }
                 break;
-        }
+        }       
     }
     
     private boolean TreePosition()
@@ -145,7 +156,7 @@ public class MapController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        grid.addRow(1);
+       // grid.addRow(1);
         Generate();  
     }       
 }
