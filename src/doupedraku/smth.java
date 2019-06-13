@@ -1,11 +1,17 @@
 package doupedraku;
 
+import javafx.application.Application;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -13,6 +19,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 
 /**
  *
@@ -30,6 +37,10 @@ public class smth implements Initializable {
     private ImageView chr;
     @FXML
     public ImageView tree;
+    @FXML
+    public ImageView Grass;
+    @FXML
+    public AnchorPane rootPane;
     
     public int x = 0;
     int y = 0;
@@ -39,9 +50,15 @@ public class smth implements Initializable {
         grid.setConstraints(tree, x=4, y=1);
     }
     
+    public static void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(Alert.class.getResource("/Alert.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     
     @FXML
-    private void handleButtonAction(KeyEvent event) 
+    private void handleButtonAction(KeyEvent event) throws IOException 
     {
         System.out.println("Dopředu");
         if (x == 4 && y ==1 || x == 2 && y ==3)
@@ -56,8 +73,11 @@ public class smth implements Initializable {
 
     }
     
-    private void Movement(KeyEvent event)
+    private void Movement(KeyEvent event) throws IOException
     {
+        
+       
+        
         if(event.getCode() == KeyCode.D)
         {
             System.out.println("Dopředu");
@@ -68,6 +88,8 @@ public class smth implements Initializable {
                 System.out.println("strom");
                 grid.setConstraints(chr, --x, y);
             }
+            
+           
         }
         
         else if(event.getCode() == KeyCode.A)
@@ -102,6 +124,16 @@ public class smth implements Initializable {
                 grid.setConstraints(chr, x, --y);
             }
         }
+        
+         if(x == 4 && y == 4)
+            {
+            System.out.println("Bacha Arénaaa");
+            
+            
+            }
+    
+        
+        
     }
     
     @Override
@@ -111,5 +143,11 @@ public class smth implements Initializable {
         grid.addRow(1);
        
     }    
+
+    private InputStream Alert(String aletfxml) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
     
 }
