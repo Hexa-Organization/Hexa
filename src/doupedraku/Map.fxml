@@ -73,6 +73,26 @@
                   <Image url="@Assets/download.png" />
                </image>
             </ImageView>
+            <ImageView id="enemy1" fx:id="enemy1" fitHeight="64.0" fitWidth="68.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <image>
+                  <Image url="@Assets/enemy.gif" />
+               </image>
+            </ImageView>
+            <ImageView id="enemy3" fx:id="enemy3" fitHeight="64.0" fitWidth="67.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+               <image>
+                  <Image url="@Assets/enemy.gif" />
+               </image>
+            </ImageView>
+            <ImageView id="enemy2" fx:id="enemy2" fitHeight="64.0" fitWidth="69.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
+               <image>
+                  <Image url="@Assets/enemy.gif" />
+               </image>
+            </ImageView>
+            <ImageView id="enemy4" fx:id="enemy4" fitHeight="64.0" fitWidth="69.0" GridPane.columnIndex="3" GridPane.rowIndex="8">
+               <image>
+                  <Image url="@Assets/enemy.gif" />
+               </image>
+            </ImageView>
          </children>
       </GridPane>
     </children>
