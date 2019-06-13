@@ -12,6 +12,12 @@ import javafx.scene.layout.AnchorPane;
 
 public class PlayerCreatorController implements Initializable 
 {   
+    
+    /// This is for Bob
+    // Boba máme moc rádi
+    /* Asi tak moc jako
+    minecraft
+    */
     @FXML
     AnchorPane rootPane;
     @FXML
