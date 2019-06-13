@@ -2,22 +2,14 @@ package doupedraku;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.shape.Circle;
 
-/**
- *
- * @author bohou
- */
 public class MapController implements Initializable 
 {
     @FXML
@@ -48,29 +40,35 @@ public class MapController implements Initializable
     int tree3y = 8;
     @FXML
     public ImageView tree4;
-    int tree4x = 6;
+    int tree4x = 8;
     int tree4y = 4;
     
     int fieldx[] = new int[5];
     int fieldy[] = new int[5];
+    ImageView trees[] = new ImageView[5];
     
-    public void Generate()
+    private void Generate()
     {
-        grid.setConstraints(tree0, tree0x, tree0y);
+        trees[0] = tree0;
+        trees[1] = tree1;
+        trees[2] = tree2;
+        trees[3] = tree3;
+        trees[4] = tree4;
         fieldx[0] = tree0x;
         fieldy[0] = tree0y;
-        grid.setConstraints(tree1, tree1x, tree1y);
         fieldx[1] = tree1x;
         fieldy[1] = tree1y;
-        grid.setConstraints(tree2, tree2x, tree2y);
         fieldx[2] = tree2x;
         fieldy[2] = tree2y;
-        grid.setConstraints(tree3, tree3x, tree3y);
         fieldx[3] = tree3x;
         fieldy[3] = tree3y;
-        grid.setConstraints(tree4, tree4x, tree4y);
         fieldx[4] = tree4x;
-        fieldy[4] = tree4y;    
+        fieldy[4] = tree4y; 
+        
+        for (int i = 0; i < trees.length; i++)
+        {
+            grid.setConstraints(trees[i], fieldx[i], fieldy[i]);
+        }
     }
     
     @FXML
@@ -80,10 +78,9 @@ public class MapController implements Initializable
     }
     
     @FXML
-    public void Movement(KeyEvent event)
+    private void Movement(KeyEvent event)
     {
-        
-        
+          
         switch (event.getCode())
         {
             case D:
@@ -96,8 +93,7 @@ public class MapController implements Initializable
                 {
                     System.out.println("NO");
                     grid.setConstraints(chr, --x, y);
-                }
-                
+                }  
                 break;
 
             case A:
@@ -156,7 +152,6 @@ public class MapController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-       // grid.addRow(1);
         Generate();  
     }       
 }
