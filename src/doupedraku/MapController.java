@@ -76,176 +76,76 @@ public class MapController implements Initializable
     @FXML
     private void handleButtonAction(KeyEvent event) 
     {
-        fieldx[0] = tree0x;
-        fieldy[0] = tree0y;
-        
-        fieldx[1] = tree1x;
-        fieldy[1] = tree1y;
-        
-        fieldx[2] = tree2x;
-        fieldy[2] = tree2y;
-        
-        fieldx[3] = tree3x;
-        fieldy[3] = tree3y;
-        
-        fieldx[4] = tree4x;
-        fieldy[4] = tree4y;
-        
         Movement(event);
-        
-//        for (int i = 0; i < fieldx.length; i++)
-//        {
-//            if(x == fieldx[i] && y ==fieldx[i])
-//            {
-//                System.out.println("NO");
-//                grid.setConstraints(chr, --x, y);
-//                break;
-//            }
-//            else
-//            {
-//                Movement2(event);
-//                break;
-//            }
-//        }
     }
     
+    @FXML
+    public void Movement(KeyEvent event)
+    {
+        switch (event.getCode())
+        {
+            case D:
+                System.out.println("Doprava");
+                grid.setConstraints(chr, ++x, y);
 
-    
-    private void Movement2(KeyEvent event)
-    {
-        if(event.getCode() == KeyCode.D)
-        {      
-            System.out.println("Dopředu");
-            grid.setConstraints(chr, ++x, y);
-        }
-        
-        else if(event.getCode() == KeyCode.A)
-        {
-            System.out.println("Dozadu");
-            grid.setConstraints(chr, --x, y);
-        }
-        
-        else if(event.getCode() == KeyCode.W)
-        {
-            System.out.println("DoLeva");
-            GridPane.setConstraints(chr, x, --y);
-        }
-        
-        else if(event.getCode() == KeyCode.S)
-        {
-            System.out.println("DoPrava");
-            grid.setConstraints(chr, x, ++y);
-        }
-    }
-    
-    
-    
-    
-    
-    
-    private void Movement(KeyEvent event)
-    {
-        fieldx[0] = tree0x;
-        fieldy[0] = tree0y;
-        
-        fieldx[1] = tree1x;
-        fieldy[1] = tree1y;
-        
-        fieldx[2] = tree2x;
-        fieldy[2] = tree2y;
-        
-        fieldx[3] = tree3x;
-        fieldy[3] = tree3y;
-        
-        fieldx[4] = tree4x;
-        fieldy[4] = tree4y;
-        
-        if(event.getCode() == KeyCode.D)
-        {
-            for (int i = 0; i < fieldx.length; i++)
-            {
-                if (x == fieldx[i] && y == fieldy[i])
+                if (TreePosition())
                 {
                     System.out.println("NO");
+                    grid.setConstraints(chr, --x, y);
                 }
                 break;
-            }
-            System.out.println("Dopředu");
-            grid.setConstraints(chr, ++x, y);
 
-                
-                
-                
-//                
-//                if (x != fieldx[i] && y != fieldy[i])
-//                {
-//                    System.out.println("Dopředu");
-//                    grid.setConstraints(chr, ++x, y);
-//                } 
-//                else if (x == fieldx[i] && y == fieldy[i])
-//                {
-//                    System.out.println("strom");
-//                    grid.setConstraints(chr, --x, y);
-//                    break;
-//                }
-            
-        }
-        
-        
-//        if(event.getCode() == KeyCode.D)
-//        {
-//            System.out.println("Dopředu");
-//            grid.setConstraints(chr, ++x, y);
-//            
-//            if (x == fieldx[i] && y == fieldy[i])
-//            {
-//                System.out.println("strom");
-//                grid.setConstraints(chr, --x, y);
-//            }
-//        }
-        
-        if(event.getCode() == KeyCode.A)
-        {
-            System.out.println("Dozadu");
-            grid.setConstraints(chr, --x, y);
-            if (x == 4 && y ==1 || x == 2 && y ==3)
-            {
-                System.out.println("strom");
-                grid.setConstraints(chr, ++x, y);
-            }
-        }
-        
-        else if(event.getCode() == KeyCode.W)
-        {
-            System.out.println("DoLeva");
-            GridPane.setConstraints(chr, x, --y);
-            if (x == 4 && y ==1 || x == 2 && y ==3)
-            {
-                System.out.println("strom");
+            case A:
+                System.out.println("Doleva");
+                grid.setConstraints(chr, --x, y); 
+
+                if (TreePosition())
+                {
+                    System.out.println("NO");
+                    grid.setConstraints(chr, ++x, y);
+                }
+                break;
+
+            case S:
+                System.out.println("Dolu");
                 grid.setConstraints(chr, x, ++y);
-            }
-        }
-        
-        else if(event.getCode() == KeyCode.S)
-        {
-            System.out.println("DoPrava");
-            grid.setConstraints(chr, x, ++y);
-            if (x == 4 && y ==1 || x == 2 && y ==3)
-            {
-                System.out.println("strom");
+
+                if (TreePosition())
+                {
+                    System.out.println("NO");
+                    grid.setConstraints(chr, x, --y);
+                }
+                break;
+
+            case W:
+                System.out.println("Nahoru");
                 grid.setConstraints(chr, x, --y);
-            }
+
+                if (TreePosition())
+                {
+                    System.out.println("NO");
+                    grid.setConstraints(chr, x, ++y);
+                }
+                break;
         }
+    }
+    
+    private boolean TreePosition()
+    {
+        for (int i = 0; i < fieldx.length; i++)
+        {
+            if (x == fieldx[i] && y == fieldy[i])
+            {
+                return true;
+            }     
+        }
+        return false;
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        // TODO
-        
         grid.addRow(1);
-        Generate();
-       
-    }    
-    
+        Generate();  
+    }       
 }
