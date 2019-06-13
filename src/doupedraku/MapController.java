@@ -70,9 +70,9 @@ public class MapController implements Initializable
     int fieldy[] = new int[5];
     ImageView trees[] = new ImageView[5];
     
-    int field2x[] = new int[5];
-    int field2y[] = new int[5];
-    ImageView enemys[] = new ImageView[5];
+    int field2x[] = new int[4];
+    int field2y[] = new int[4];
+    ImageView enemys[] = new ImageView[4];
     
     private void Generate()
     {
@@ -93,19 +93,19 @@ public class MapController implements Initializable
         fieldx[4] = tree4x;
         fieldy[4] = tree4y;
         
-        enemys[1] = enemy1;
-        enemys[2] = enemy2;
-        enemys[3] = enemy3;
-        enemys[4] = enemy4;
+        enemys[0] = enemy1;
+        enemys[1] = enemy2;
+        enemys[2] = enemy3;
+        enemys[3] = enemy4;
         
-        field2x[1] = enemy1x;
-        field2y[1] = enemy1y;
-        field2x[2] = enemy2x;
-        field2y[2] = enemy2y;
-        field2x[3] = enemy3x;
-        field2y[3] = enemy3y;
-        field2x[4] = enemy4x;
-        field2y[4] = enemy4y;
+        field2x[0] = enemy1x;
+        field2y[0] = enemy1y;
+        field2x[1] = enemy2x;
+        field2y[1] = enemy2y;
+        field2x[2] = enemy3x;
+        field2y[2] = enemy3y;
+        field2x[3] = enemy4x;
+        field2y[3] = enemy4y;
         
         for (int i = 0; i < trees.length; i++)
         {
