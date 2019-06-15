@@ -8,7 +8,10 @@ import javafx.scene.control.*;
 import java.io.PrintWriter;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class PlayerCreatorController implements Initializable 
 {   
@@ -35,7 +38,11 @@ public class PlayerCreatorController implements Initializable
     @FXML
     Label warning;
     
-    Player player = new Player();        
+    Player player = new Player();
+
+
+
+   
 
     @FXML
     public void CreatePlayer() throws IOException
@@ -88,12 +95,12 @@ public class PlayerCreatorController implements Initializable
             rootPane.getChildren().setAll(pane); 
         }
         
-//        Parent root = FXMLLoader.load(getClass().getResource("PlayerInfo.fxml"));
-//        
-//        Scene scene = new Scene(root);
-//        Stage stage = new Stage();
-//        stage.setScene(scene);
-//        stage.show();       
+        Parent root = FXMLLoader.load(getClass().getResource("PlayerInfo.fxml"));
+        
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();       
     }
     
     private int GetNumber(TextField field)

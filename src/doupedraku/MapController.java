@@ -124,12 +124,13 @@ public class MapController implements Initializable
         Movement(event);
     }
     
+   
      @FXML
     public void Fighting()
     {
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Battle.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alert.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
