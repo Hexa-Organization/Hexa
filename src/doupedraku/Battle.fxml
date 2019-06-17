@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="doupedraku.BattleController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doupedraku.BattleController">
    <children>
-      <Label fx:id="label" layoutX="14.0" layoutY="14.0" text="Label" />
+      <Label fx:id="Pname" layoutX="14.0" layoutY="23.0" text="Player name" />
       <Label fx:id="Janek" layoutX="542.0" layoutY="23.0" text="Label" />
       <Button layoutX="274.0" layoutY="272.0" mnemonicParsing="false" onAction="#Kill" text="kill" />
+      <Label fx:id="Pattack" layoutX="14.0" layoutY="50.0" text="Player att" />
+      <Label fx:id="PhealthPoints" layoutX="14.0" layoutY="77.0" text="Player hp" />
+      <Label fx:id="Parmor" layoutX="14.0" layoutY="104.0" text="Player Armor" />
    </children>
 </AnchorPane>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,7 +12,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="pane" fx:id="pane" onKeyPressed="#Movement" prefHeight="609.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doupedraku.MapController">
+<AnchorPane id="pane" fx:id="pane" onKeyPressed="#Movement" prefHeight="609.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doupedraku.MapController">
     <children>
 
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
@@ -93,6 +97,7 @@
                   <Image url="@Assets/enemy.gif" />
                </image>
             </ImageView>
+            <Button mnemonicParsing="false" opacity="0.0" prefHeight="9.0" prefWidth="0.0" text="Button" />
          </children>
       </GridPane>
     </children>

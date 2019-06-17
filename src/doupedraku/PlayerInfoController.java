@@ -128,11 +128,11 @@ public class PlayerInfoController implements Initializable
     {
        try 
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Battle.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Map.fxml"));
             Parent root = (Parent) loader.load();
 
-            BattleController secController=loader.getController();
-            secController.SetName(player.name + player.attack, player);
+//            BattleController secController=loader.getController();
+//            secController.SetName(player.name + player.attack, player);
             Stage stage=new Stage();
             stage.setScene(new Scene(root));
             stage.show();

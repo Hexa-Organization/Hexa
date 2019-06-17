@@ -54,12 +54,6 @@ public class PlayerCreatorController implements Initializable
         player.strength = GetNumber(strengthPointsField);
         player.stamina = GetNumber(staminaPointsField);
         player.vitality = GetNumber(vitalityPointsField);
-        player.isMale = true;
-        player.maxHealthPoints = player.GetHealth(player.stamina);
-        player.expirience = 0;
-        player.maxMagicPoints = player.GetHealth(player.inteligence);
-        player.attack = player.GetAttack(player.strength);
-        player.armor = player.GetAttack(player.vitality);
       
         int count = player.inteligence + player.strength + player.stamina + player.vitality;
         
@@ -73,27 +67,12 @@ public class PlayerCreatorController implements Initializable
         }
         else
         {
-           System.out.println(player.name + player.inteligence + player.strength + player.stamina + player.vitality + player.isMale + count);
-
-            try (PrintWriter out = new PrintWriter("Character.txt")) 
-            {
-                out.println(player.level);
-                out.println(player.name);
-                out.println(player.strength);
-                out.println(player.stamina);
-                out.println(player.inteligence);
-                out.println(player.vitality);
-                out.println("0");  
-                out.println("0");  
-                out.println("0");  
-            }
-            catch(Exception e)
-            {
-
-            }
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("PlayerInfo.fxml"));
-            rootPane.getChildren().setAll(pane); 
+            player.SaveInfo(player.level, player.name, player.strength, player.stamina, player.inteligence, player.vitality);
+           
+            System.out.println(player.name + player.inteligence + player.strength + player.stamina + player.vitality + player.isMale + count);
         }
+        
+        ExitMethod();
         
         Parent root = FXMLLoader.load(getClass().getResource("PlayerInfo.fxml"));
         
@@ -101,6 +80,13 @@ public class PlayerCreatorController implements Initializable
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();       
+    }
+    
+        @FXML
+    public void ExitMethod()
+    {
+        Stage stage = (Stage) rootPane.getScene().getWindow();
+        stage.close();
     }
     
     private int GetNumber(TextField field)
