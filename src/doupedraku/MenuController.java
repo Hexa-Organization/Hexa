@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package doupedraku;
 
 import java.net.URL;
@@ -16,13 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-
-
-/**
- *
- * @author bohou
- */
-public class MainMenu implements Initializable {
+public class MenuController implements Initializable {
     
     @FXML
     public Button start;

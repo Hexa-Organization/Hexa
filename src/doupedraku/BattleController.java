@@ -30,8 +30,23 @@ public class BattleController implements Initializable
     private void Load() throws IOException
     {
         String list[] = player.LoadInfo();
+        player.attack = player.GetAttack(GetNumber(list[2]));
+        player.armor = player.GetAttack(GetNumber(list[5]));
+        player.healthPoints = player.GetHealth(GetNumber(list[3]));
         Pname.setText(list[1]);
+        Pattack.setText(player.attack + "");
+        PhealthPoints.setText(player.healthPoints + "");
+        Parmor.setText(player.armor + "");
+
         
+    }
+    
+    private int GetNumber(String string)
+    {
+        String sValue = string;
+        sValue = sValue.replaceAll("\\D+", "");
+        int number = Integer.parseInt(sValue);
+        return number;
     }
     
     @FXML

@@ -70,7 +70,8 @@ public class Player extends LivingThings
         value = value*10 + 12; 
         return value;
     }
-    public int GetAttack(int value)
+    
+    public int GetAttack(int value) 
     {
         value = value/2 - 2;
         if (value <= 0)
