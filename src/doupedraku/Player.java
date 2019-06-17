@@ -87,7 +87,7 @@ public class Player extends LivingThings
     
     public int GetCharacterPoints()
     {
-        int value = 30 + level*10;
+        int value = 50 + level*10;
         return value;
     }
 }

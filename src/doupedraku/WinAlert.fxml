@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="doupedraku.WinAlertController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@Assets/WinBack.png" />
+         </image>
+      </ImageView>
+      <Button id="cnf" fx:id="cnf" layoutX="210.0" layoutY="324.0" mnemonicParsing="false" onAction="#CnfAction" prefHeight="47.0" prefWidth="156.0" text="Confirm" />
+      <Label layoutX="253.0" layoutY="21.0" prefHeight="70.0" prefWidth="190.0" text="You win" textAlignment="CENTER" textFill="#636b1a">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

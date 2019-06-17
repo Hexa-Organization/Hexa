@@ -5,7 +5,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import java.io.PrintWriter;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -59,7 +58,7 @@ public class PlayerCreatorController implements Initializable
         
         if (count != player.characterPoints)
         {
-            warning.setText("Please, assign exactly all avalible points (hint: It's 40)");
+            warning.setText("Please, assign exactly all avalible points (hint: It's 60)");
             inteligencePointsField.clear();
             strengthPointsField.clear();
             staminaPointsField.clear();
