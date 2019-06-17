@@ -6,8 +6,12 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class BattleController implements Initializable 
 {   
@@ -25,6 +29,26 @@ public class BattleController implements Initializable
     Player player = new Player();
 
     Enemy janek = new Enemy();
+    
+    //
+    public void OpenAlert()
+    {
+             try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("WinAlert.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();        
+        }
+        
+        catch(Exception e)
+        {
+            System.out.println("Nefunguje to!!");
+        }
+    }
+    
+  
     
     @FXML
     private void Load() throws IOException
@@ -54,6 +78,7 @@ public class BattleController implements Initializable
     {       
         janek.AddStats("Janek");
         Janek.setText(janek.name + janek.healthPoints);
+      
     }
     
     @FXML
@@ -62,6 +87,10 @@ public class BattleController implements Initializable
         player.Attack(janek);
         janek.CheckingForDeath(janek);
         Janek.setText(janek.name + janek.healthPoints);
+        if(janek.CheckForDeath())
+        {
+              OpenAlert();
+        }
     }
     
     @Override
