@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -16,6 +17,11 @@
     <children>
 
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <ImageView id="grs" fx:id="grs" fitHeight="619.0" fitWidth="689.0">
+         <image>
+            <Image url="@Assets/grass.jpg" />
+         </image>
+      </ImageView>
       <GridPane id="grid" fx:id="grid" gridLinesVisible="true" prefHeight="619.0" prefWidth="679.0" style="-fx-border-color: #000000;">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="581.0" minWidth="10.0" prefWidth="100.0" />
@@ -28,6 +34,7 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="574.0" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="574.0" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="574.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="574.0" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="125.0" vgrow="SOMETIMES" />
@@ -36,10 +43,11 @@
             <RowConstraints maxHeight="239.0" minHeight="10.0" prefHeight="125.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="239.0" minHeight="10.0" prefHeight="125.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="239.0" minHeight="10.0" prefHeight="125.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="239.0" minHeight="0.0" prefHeight="125.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="239.0" minHeight="10.0" prefHeight="125.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="239.0" minHeight="0.0" prefHeight="125.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="238.0" minHeight="10.0" prefHeight="125.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="538.0" minHeight="10.0" prefHeight="125.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="421.0" minHeight="0.0" prefHeight="125.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="421.0" minHeight="0.0" prefHeight="125.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <ImageView fx:id="tree1" fitHeight="63.0" fitWidth="69.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
@@ -62,7 +70,7 @@
                   <Image url="@Assets/player.gif" />
                </image>
             </ImageView>
-            <ImageView id="tree" fx:id="tree4" fitHeight="62.0" fitWidth="68.0" onKeyPressed="#handleButtonAction" GridPane.columnIndex="6" GridPane.rowIndex="1">
+            <ImageView id="tree" fx:id="tree4" fitHeight="62.0" fitWidth="68.0" onKeyPressed="#handleButtonAction" GridPane.columnIndex="7" GridPane.rowIndex="1">
                <image>
                   <Image url="@Assets/download.png" />
                </image>

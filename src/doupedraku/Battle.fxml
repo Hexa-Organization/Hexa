@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -18,5 +19,10 @@
       <Label fx:id="Eattack" layoutX="521.0" layoutY="50.0" text="Enemy att" />
       <Label fx:id="EhealthPoints" layoutX="520.0" layoutY="77.0" text="enemy hp" />
       <Label fx:id="Earmor" layoutX="520.0" layoutY="104.0" text="Enemy armor" />
+      <ImageView id="btl" fx:id="btl" fitHeight="123.0" fitWidth="121.0" layoutX="229.0" layoutY="33.0">
+         <image>
+            <Image url="@Assets/battle.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

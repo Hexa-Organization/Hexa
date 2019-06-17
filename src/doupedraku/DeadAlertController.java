@@ -7,28 +7,29 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class WinAlertController implements Initializable
+public class DeadAlertController implements Initializable 
 {
     @FXML
-    private Button cnf;
+    public Button cnt;
     
     @FXML
     public void Exit()
     {
-        Stage stage = (Stage) cnf.getScene().getWindow();
-        stage.close();
+         Stage stage = (Stage) cnt.getScene().getWindow();
+         stage.close();
     }
     
-    private void CnfAction()
+    @FXML
+    public void Continue()
     {
-        System.out.println("ahohojjo");
+        System.out.println("Čauuuuu kokosko");
         Exit();
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb)
+    public void initialize(URL url, ResourceBundle rb) 
     {
 
     }    
-   
+    
 }

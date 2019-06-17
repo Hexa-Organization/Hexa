@@ -15,7 +15,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -131,8 +130,6 @@ public class PlayerInfoController implements Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Map.fxml"));
             Parent root = (Parent) loader.load();
 
-//            BattleController secController=loader.getController();
-//            secController.SetName(player.name + player.attack, player);
             Stage stage=new Stage();
             stage.setScene(new Scene(root));
             stage.show();
@@ -169,6 +166,5 @@ public class PlayerInfoController implements Initializable
         {
             Logger.getLogger(PlayerInfoController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
-    
+    }       
 }

@@ -9,17 +9,14 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class PlayerCreatorController implements Initializable 
 {   
-    
-    /// This is for Bob
-    // Boba máme moc rádi
-    /* Asi tak moc jako
-    minecraft
-    */
+    @FXML
+    public ImageView bck; 
     @FXML
     AnchorPane rootPane;
     @FXML
@@ -38,10 +35,6 @@ public class PlayerCreatorController implements Initializable
     Label warning;
     
     Player player = new Player();
-
-
-
-   
 
     @FXML
     public void CreatePlayer() throws IOException
@@ -81,7 +74,7 @@ public class PlayerCreatorController implements Initializable
         stage.show();       
     }
     
-        @FXML
+    @FXML
     public void ExitMethod()
     {
         Stage stage = (Stage) rootPane.getScene().getWindow();

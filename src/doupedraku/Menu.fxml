@@ -21,9 +21,9 @@
       </ImageView>
       <Button id="start" fx:id="start" layoutX="185.0" layoutY="214.0" mnemonicParsing="false" onAction="#ButtonActionStart" prefHeight="54.0" prefWidth="230.0" text="START" />
       <Button id="exit" fx:id="exit" layoutX="185.0" layoutY="282.0" mnemonicParsing="false" onAction="#ButtonActionExit" prefHeight="54.0" prefWidth="230.0" text="EXIT" />
-      <Label layoutX="123.0" layoutY="57.0" prefHeight="91.0" prefWidth="354.0" text="Doupě Draků" textAlignment="CENTER" textFill="#eeebeb">
+      <Label layoutX="7.0" layoutY="6.0" prefHeight="91.0" prefWidth="421.0" text="Doupě Draků" textAlignment="CENTER" textFill="#b2ad5b">
          <font>
-            <Font name="Comic Sans MS Bold Italic" size="57.0" />
+            <Font name="Bodoni MT Bold Italic" size="57.0" />
          </font>
       </Label>
    </children>

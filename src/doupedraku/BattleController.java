@@ -12,10 +12,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class BattleController implements Initializable 
-{   
+{   @FXML
+    public ImageView btl;
     @FXML
     public  Label Pname;
     @FXML
@@ -38,12 +40,29 @@ public class BattleController implements Initializable
 
     Enemy enemy = new Enemy();
     
-    //
     public void OpenAlert()
     {
         try
         {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("WinAlert.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();        
+        }
+        
+        catch(Exception e)
+        {
+            System.out.println("Nefunguje to!!");
+        }
+    }
+    
+    @FXML
+    public void OpenDeadalert()
+    {
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DeadAlert.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
@@ -77,7 +96,7 @@ public class BattleController implements Initializable
         return number;
     }
     
-    public void UpdateInfo()
+    private void UpdateInfo()
     {
         Ename.setText(enemy.name);
         Eattack.setText("attack: " + enemy.attack);
@@ -130,7 +149,12 @@ public class BattleController implements Initializable
         
         if(player.CheckForDeath())
         {
-                ////TADY TO DODEJ SEFE
+            
+            OpenDeadalert();
+            Stage stage = (Stage) Pname.getScene().getWindow();
+            stage.close();
+          
+            
         }
     }
     

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package doupedraku;
 
 import java.net.URL;
@@ -16,17 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author bohou
- */
-public class AlertController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
-    
+public class AlertController implements Initializable 
+{   
     @FXML
     public Button confirm;
     @FXML
@@ -36,9 +22,6 @@ public class AlertController implements Initializable {
     @FXML
     public ImageView logo;
     
-    
-    
-    //methodyy
     @FXML
     public void Exit()
     {
@@ -49,7 +32,7 @@ public class AlertController implements Initializable {
     @FXML
     public void ConfirmF()
     {
-         try
+        try
         {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Battle.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
@@ -70,8 +53,7 @@ public class AlertController implements Initializable {
     {
          Exit();
     }
-    
-  
+     
     
     @FXML
     public void ConfirmFight()
@@ -90,8 +72,9 @@ public class AlertController implements Initializable {
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+
     }    
     
 }

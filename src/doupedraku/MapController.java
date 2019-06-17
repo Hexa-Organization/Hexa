@@ -17,6 +17,8 @@ import javafx.stage.Stage;
 public class MapController implements Initializable 
 {
     @FXML
+    public ImageView grs;
+    @FXML
     private Label label;
     @FXML
     private AnchorPane pane;
