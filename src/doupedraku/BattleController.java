@@ -1,6 +1,7 @@
 package doupedraku;
 
 import java.io.IOException;
+import static java.lang.System.exit;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -8,6 +9,7 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class BattleController implements Initializable 
 {   
@@ -36,9 +38,7 @@ public class BattleController implements Initializable
         Pname.setText(list[1]);
         Pattack.setText(player.attack + "");
         PhealthPoints.setText(player.healthPoints + "");
-        Parmor.setText(player.armor + "");
-
-        
+        Parmor.setText(player.armor + "");     
     }
     
     private int GetNumber(String string)
@@ -52,7 +52,7 @@ public class BattleController implements Initializable
     @FXML
     public void CreateEnemy()
     {       
-        janek.AddStats("Janek");
+        janek.AddStats("Janek", 36, 2, 3);
         Janek.setText(janek.name + janek.healthPoints);
     }
     
@@ -60,9 +60,14 @@ public class BattleController implements Initializable
     public void Kill()
     {
         player.Attack(janek);
-        janek.CheckingForDeath(janek);
+        if (janek.CheckForDeath())
+        {
+            Stage stage = (Stage) Pname.getScene().getWindow();
+            stage.close();
+        }
         Janek.setText(janek.name + janek.healthPoints);
     }
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 

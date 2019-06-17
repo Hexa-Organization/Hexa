@@ -4,18 +4,12 @@ public class Enemy extends LivingThings
 {
     public boolean died;
     
-    public void AddStats(String name)
+    public void AddStats(String name, int maxhp, int att, int arm)
     {
         this.name = name;
-        this.maxHealthPoints = 25;
+        this.maxHealthPoints = maxhp;
         this.healthPoints = maxHealthPoints;
-        this.attack = 3;
-        this.armor = 1;
-    }
-    
-    public void CheckingForDeath(Object enemy)
-    {
-        if (this.CheckForDeath())
-            enemy = null;
+        this.attack = att;
+        this.armor = arm;
     }
 }

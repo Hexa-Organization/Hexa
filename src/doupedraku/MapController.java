@@ -141,6 +141,7 @@ public class MapController implements Initializable
         {
             System.out.println("Nefunguje to!!");
         }
+        grid.setConstraints(chr, --x, y);
     }
     
     @FXML
